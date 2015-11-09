@@ -1,0 +1,47 @@
+<table style="width:100%">
+  <tr>
+    <td>NAME</td>
+    <td>DYNO SIZE</td>    
+    <td>FREQUENCY</td>
+    <td>NEXT DUE</td>
+    <td>LAST RUN</td>
+  </tr>
+  <tr ng-repeat="todo in todoss track by $index">
+    <td>{{todo.task}}</td>
+    <td>{{todo.dynos.amount}}</td>    
+    <td>{{todo.frequency.time}} </td>
+    <td>{{todo.frequency.nextRun | date:'medium'}}</td>
+    <td>{{todo.frequency.alarm}}</td>
+    <td><edit-item></edit-item></td>
+    <td><delete-item></delete-item></td>
+  </tr>
+  <tr ng-repeat="todo in todos track by $index">
+    <td>{{todo.task}}</td>
+    <td>{{todo.dynos.amount}}</td>    
+    <td>{{todo.frequency.time}} </td>
+    <td>{{todo.frequency.nextRun | date:'medium'}}</td>
+    <td>{{todo.frequency.alarm}}</td>
+    <td><edit-item></edit-item></td>
+    <td><delete-item></delete-item></td>
+  </tr>
+  
+
+</table>
+
+
+<form>
+  <input placeholder="do something" type="text" name="task" ng-model="opts.task">
+  <select name="dyno-size" id="dyno"
+    ng-options="option.amount for option in opts.dynos track by option.id"
+    ng-model="opts.select">
+  </select>
+
+  <select name="frequency" id="frequence"
+    ng-options="option.time for option in opts.frequence track by option.id"
+    ng-model="opts.select2">
+  </select>
+  <add-item></add-item>
+</form>
+<create-item></create-item>
+
+
