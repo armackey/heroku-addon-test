@@ -3,10 +3,9 @@
 
   angular
     .module('app')
-    .directive('addItem' addItem, function (storage, $window) {
-      function () {
-
-      }
+    .directive('addItem', addItem);
+      function addItem(storage, $window) {
+    
         return {
           restrict: 'E',
           template: '<form>' +
@@ -28,6 +27,7 @@
             };
           }
         };
-      });
+
+      }
 
 })();

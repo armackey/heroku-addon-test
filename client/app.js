@@ -6,7 +6,8 @@ angular.module('app', ['ui.router', 'angularMoment'])
       .state('main', {
         url: "/",
         templateUrl: "partials/main.html",
-        controller: 'mainCtrl'
+        controller: 'Main',
+        controllerAs: 'Main'
       });
 
       $urlRouterProvider.otherwise('/');

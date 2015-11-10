@@ -3,11 +3,11 @@
 
   angular
     .module('app')
-    .controller('mainCtrl', mainCtrl);  
+    .controller('Main', Main);  
 
-      $inject.mainCtrl = ['$scope', '$interval', '$window', 'storage'];
+      Main.$inject = ['$scope', '$interval', '$window', 'storage'];
 
-      function mainCtrl($scope, $interval, $window, storage) {
+      function Main($scope, $interval, $window, storage) {
         
         var date = Date.now(),
             min = date + (600 * 1000),
