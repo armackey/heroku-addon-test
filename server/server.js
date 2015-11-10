@@ -5,6 +5,8 @@ var express = require('express'),
     app = express();
 
 mongoose.connect(config.db);
+
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.use(express.static('client'));
