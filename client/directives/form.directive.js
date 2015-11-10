@@ -3,8 +3,8 @@
 
   angular
     .module('app')
-    .directive('addItem', addItem);
-      function addItem(storage, $window) {
+    .directive('jobForm', form);
+      function form(storage, $window) {
     
         return {
           restrict: 'E',
@@ -14,12 +14,13 @@
                     'ng-model="opts.select"></select>' +
                     '<select name="frequency" id="frequence"' +
                     'ng-options="option.time for option in opts.frequence track by option.id" ng-model="opts.select2"></select>' +
-                    '</form>',
-          controller: 'mainCtrl',
+                    '</form>' +
+                    '<button ng-show="isAdding" ng-click="addJob">add job</button>',
+          controller: 'Main',
           link: function(scope, elem, attrs) {
             var id = 0;
             scope.todos = [];
-            scope.addTodo = function () {
+            scope.addJob = function () {
               scope.todos.push({task: scope.opts.task, dynos: scope.opts.select, frequency: scope.opts.select2, lastRun: 'unspecified', id: id++});
               $window.localStorage.setItem('jobs', JSON.stringify(scope.todos));
               scope.opts.task = '';

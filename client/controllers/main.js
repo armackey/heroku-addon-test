@@ -9,6 +9,8 @@
 
       function Main($scope, $interval, $window, storage) {
         
+        var vm = this;
+
         var date = Date.now(),
             min = date + (600 * 1000),
             hour = date + (3600 * 1000),

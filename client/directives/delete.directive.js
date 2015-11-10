@@ -4,7 +4,7 @@ angular
       return {
         restrict: 'E',
         template: '<button ng-click="remove(item)" >delete</button>',
-        controller: 'mainCtrl',
+        controller: 'Main',
         link: function(scope, elem, attrs) {
           scope.remove = function (item) {
             var items = storage.get();
