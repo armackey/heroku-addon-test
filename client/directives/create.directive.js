@@ -1,6 +1,6 @@
 angular
   .module('app')
-    .directive('createItem', function (storage, $window) {
+    .directive('createItem', function() {
       return {
         restrict: 'E',
         template: '<button ng-hide="isAdding" ng-click="preAdd()" >add new job</button>',

@@ -17,8 +17,16 @@ exports.getJobs = function(req, res) {
 // post a job
 exports.postJob = function(req, res) {
   // creates an instance and stores it
-  var newJob = new Jobs(req.body);
+  var newJob = new Jobs({
+    task: req.body.task,
+    dynos: req.body.dynos,
+    frequency: req.body.frequency,
+    lastRun: req.body.lastRun,
+    nextRun: req.body.nextRun
+  });
+  console.log(req.body);
   newJob.save(function(){
+    console.log('post it');
     // sends back to client
     res.send(newJob);
   });

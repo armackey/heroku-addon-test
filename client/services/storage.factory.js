@@ -18,9 +18,9 @@
 
             });
           };
-
+          // deletes a job
           this.destroy = function() {
-            $http.delete('/getJob').then(function(data) {
+            $http.delete('/removeJob').then(function(data) {
               return data;
             });
           };

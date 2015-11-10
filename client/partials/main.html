@@ -6,15 +6,6 @@
     <td>NEXT DUE</td>
     <td>LAST RUN</td>
   </tr>
-  <tr ng-repeat="todo in todoss track by $index">
-    <td>{{todo.task}}</td>
-    <td>{{todo.dynos.amount}}</td>    
-    <td>{{todo.frequency.time}} </td>
-    <td>{{todo.frequency.nextRun | date:'medium'}}</td>
-    <td>{{todo.frequency.alarm}}</td>
-    <td><edit-item></edit-item></td>
-    <td><delete-item></delete-item></td>
-  </tr>
   <tr ng-repeat="todo in todos track by $index">
     <td>{{todo.task}}</td>
     <td>{{todo.dynos.amount}}</td>    
@@ -24,6 +15,15 @@
     <td><edit-item></edit-item></td>
     <td><delete-item></delete-item></td>
   </tr>
+<!--   <tr ng-repeat="todo in todos track by $index">
+    <td>{{todo.task}}</td>
+    <td>{{todo.dynos.amount}}</td>    
+    <td>{{todo.frequency.time}} </td>
+    <td>{{todo.frequency.nextRun | date:'medium'}}</td>
+    <td>{{todo.frequency.alarm}}</td>
+    <td><edit-item></edit-item></td>
+    <td><delete-item></delete-item></td>
+  </tr> -->
   
 
 </table>

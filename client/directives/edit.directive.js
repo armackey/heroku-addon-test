@@ -1,6 +1,6 @@
 angular
   .module('app')
-    .directive('editItem', function (storage, $window) {
+    .directive('editItem', function() {
       return {
         restrict: 'E',
         template: '<button ng-click="edit(id)" >edit</button ng-click="edit()">',
