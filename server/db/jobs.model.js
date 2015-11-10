@@ -2,7 +2,7 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var JobSchema = new Schema({
-  task: {type: String},
+  job: {type: String},
   dynos: {type: String},
   frequency: {type: String},
   lastRun: {type: String},
