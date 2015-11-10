@@ -18,6 +18,11 @@
             hour = date + (3600 * 1000),
             daily = date + (3600 * 24 * 1000);
 
+        $http.get('/getJobs').then(function(data) {
+          $scope.todos = data.data;
+          console.log(data.data);
+        });
+
         $scope.todo = Storage.get();
         // listing the amount of dynos that are available and the occurrence
         $scope.opts = {
