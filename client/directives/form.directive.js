@@ -5,7 +5,7 @@
     .module('app')
     .directive('jobForm', jobForm);
 
-      function jobForm($http) {
+      function jobForm($http, Storage) {
 
         return {
           restrict: 'E',
@@ -28,12 +28,13 @@
               lastRun: 'unspecified',
               nextRun: scope.opts.select2.time
             };
-            scope.todos = [];
             scope.addJob = function () {
               $http.post('/postJob', job).then(function() {
-                scope.todos.push(job);
+                // scope.todos.push(job);
                 scope.opts.task = '';  
                 scope.isAdding = false;
+                // searches db for newly created jobs
+                scope.todos = Storage.query();
               }); 
               
             };

@@ -1,14 +1,19 @@
-angular.module('app', ['ui.router', 'angularMoment'])
+(function() {
+  'use strict';
 
-  .config(function($stateProvider, $urlRouterProvider) {
+  angular.module('app', ['ui.router', 'ngResource'])
 
-    $stateProvider
-      .state('main', {
-        url: "/",
-        templateUrl: "partials/main.html",
-        controller: 'Main',
-        controllerAs: 'Main'
-      });
+    .config(function($stateProvider, $urlRouterProvider) {
 
-      $urlRouterProvider.otherwise('/');
+      $stateProvider
+        .state('main', {
+          url: "/",
+          templateUrl: "partials/main.html",
+          controller: 'Main',
+          controllerAs: 'Main'
+        });
+
+        $urlRouterProvider.otherwise('/');
     });
+
+})();

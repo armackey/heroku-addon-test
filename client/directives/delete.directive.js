@@ -1,11 +1,11 @@
 (function() {
   'use strict';
-  
+
   angular
     .module('app')
     .directive('deleteItem', deleteItem);
 
-       function deleteItem($http) {
+       function deleteItem($http, Storage) {
 
         return {
           restrict: 'E',
@@ -14,7 +14,7 @@
             scope.remove = function(todo) {
               console.log(todo);
               $http.delete('/removeJob/' + todo._id).then(function() {
-                console.log('deleted');
+              scope.todos = Storage.query();
               });
             };
           }

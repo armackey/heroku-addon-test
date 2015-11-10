@@ -33,11 +33,12 @@ exports.postJob = function(req, res) {
 };
 
 // delete a job
-exports.removeJob = function(req, res) {
+exports.removeJob = function(req, res, next) {
   Jobs.findByIdAndRemove(req.params.id, function (err, job) {
     if (err)
       throw err;
     res.send({message: 'job has been removed'});
+    next();
   });
 };
 
