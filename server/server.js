@@ -5,9 +5,9 @@ var express = require('express'),
     app = express();
 
 mongoose.connect(config.db);
-
+app.use(express.static('client'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(require('./routes/job.routes'));
 
-app.use(express.static('client'));
 app.listen(3000);
