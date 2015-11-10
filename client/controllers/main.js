@@ -9,6 +9,7 @@
 
       function Main($scope, $interval) {
         // vm(view model) for our invoking object/context
+        // using 'this' sometimes yields unexpect results
         var vm = this;
 
         // sets the time at which the job should run
