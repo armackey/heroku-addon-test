@@ -26,7 +26,6 @@ exports.postJob = function(req, res) {
   });
   console.log(newJob);
   newJob.save(function(){
-    console.log('post it');
     // sends back to client
     res.send(newJob);
   });
@@ -38,7 +37,6 @@ exports.removeJob = function(req, res, next) {
     if (err)
       throw err;
     res.send({message: 'job has been removed'});
-    next();
   });
 };
 

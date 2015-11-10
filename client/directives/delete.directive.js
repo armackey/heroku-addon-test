@@ -12,8 +12,8 @@
           template: '<button ng-click="remove(todo)" >delete</button>',
           link: function(scope, elem, attrs) {
             scope.remove = function(todo) {
-              console.log(todo);
-              $http.delete('/removeJob/' + todo._id).then(function() {
+              $http.delete('/removeJob/' + todo._id).then(function(data) {
+              // after deletion, searches db for current jobs
               scope.todos = Storage.query();
               });
             };
