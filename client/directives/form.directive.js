@@ -15,7 +15,7 @@
                     '<select name="frequency" id="frequence"' +
                     'ng-options="option.time for option in opts.frequence track by option.id" ng-model="opts.select2"></select>' +
                     '</form>' +
-                    '<button ng-show="isAdding" ng-click="addJob">add job</button>',
+                    '<button ng-show="isAdding" ng-click="addJob()">add job</button>',
           controller: 'Main',
           link: function(scope, elem, attrs) {
             var id = 0;
