@@ -3,8 +3,8 @@
 
   angular
     .module('app')
-    .directive('jobForm', form);
-      function form(storage, $window) {
+    .directive('jobForm', Job);
+      function Job(storage, $window) {
     
         return {
           restrict: 'E',
