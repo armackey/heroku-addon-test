@@ -5,7 +5,7 @@ angular.module('app', ['ui.router', 'angularMoment'])
     $stateProvider
       .state('main', {
         url: "/",
-        templateUrl: "main.html",
+        templateUrl: "partials/main.html",
         controller: 'mainCtrl'
       });
 
