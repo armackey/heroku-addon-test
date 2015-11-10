@@ -4,10 +4,10 @@
   angular
     .module('app')
     .controller('Main', Main);  
+      // $inject allows us to properly inject modules in our case the $scope object
+      Main.$inject = ['$scope', '$interval'];
 
-      Main.$inject = ['$scope', '$interval', '$window', 'storage'];
-
-      function Main($scope, $interval, $window, storage) {
+      function Main($scope, $interval) {
         // vm(view model) for our invoking object/context
         var vm = this;
 

@@ -5,7 +5,7 @@ var express = require('express'),
 
 router.post('/postJob', jobCtrl.postJob);
 router.get('/getJobs', jobCtrl.getJobs);
-router.put('/updateJob', jobCtrl.updateJob);
+router.put('/updateJob/:id', jobCtrl.updateJob);
 router.delete('/removeJob/:id', jobCtrl.removeJob);
 
 module.exports = router;

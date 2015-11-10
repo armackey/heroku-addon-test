@@ -5,6 +5,7 @@ exports.getJobs = function (req, res) {
   Jobs.find({}, function(err, jobs) {
     if (err) 
       throw err;
+    // condition to inform user that there aren't any jobs else send we send them
     if (jobs.length < 1) {
       res.send({message: 'There are none! Why not create one?'});
     } else {
@@ -34,5 +35,24 @@ exports.removeJob = function (req, res) {
 
 // update a job
 exports.updateJob = function (req, res) {
-
+  Jobs.findById(req.params.id, function (err, job) {
+    if (err)
+      throw err;
+    // available options to update
+    job.task = req.body.task;
+    job.dynos = req.body.dynos;
+    job.frequency = req.body.frequency;
+    // stores our updated object
+    job.save(function (err) {
+      if (err)
+        throw err;
+      res.send(job);
+    });
+  });
 };
+
+
+
+
+
+
