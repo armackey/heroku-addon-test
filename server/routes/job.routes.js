@@ -3,7 +3,7 @@ var express = require('express'),
     jobCtrl = require('../controllers/job.controller');
 
 
-router.post('/postJobs', jobCtrl.postJob);
+router.post('/postJob', jobCtrl.postJob);
 router.get('/getJobs', jobCtrl.getJobs);
 router.put('/updateJob', jobCtrl.updateJob);
 router.delete('/removeJob', jobCtrl.removeJob);
