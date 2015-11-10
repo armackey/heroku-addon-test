@@ -8,11 +8,7 @@
       Main.$inject = ['$scope', '$interval', 'Storage', '$http'];
 
       function Main($scope, $interval, Storage, $http) {
-        // vm(view model) for our invoking object/context
-        // using 'this' sometimes yields unexpect results
-        var vm = this;
-        console.log(vm);
-        // sets the time at which the job should run
+
         var date = Date.now(),
             min = date + (600 * 1000),
             hour = date + (3600 * 1000),
