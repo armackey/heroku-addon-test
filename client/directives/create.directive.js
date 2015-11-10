@@ -1,6 +1,12 @@
-angular
-  .module('app')
-    .directive('createItem', function() {
+(function() {
+  'use strict';
+
+  angular
+    .module('app')
+    .directive('createItem', createItem);
+
+      function createItem() {
+
       return {
         restrict: 'E',
         template: '<button ng-hide="isAdding" ng-click="preAdd()" >add new job</button>',
@@ -12,4 +18,5 @@ angular
           };
         }
       };
-    });
+    }
+})();

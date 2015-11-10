@@ -1,0 +1,9 @@
+<form>
+  <input type="text" placeholder="do something" ng-model=task>
+  <select name="dyno-size" id="dyno" ng-options="option.amount for option in opts.dynos track by option.id" ng-model="opts.select">
+  </select>
+  <select name="frequency" id="frequence"
+  ng-options="option.time for option in opts.frequence track by option.id" ng-model="opts.select2">
+  </select>
+</form>
+<button ng-show="isAdding" ng-click="addJob()">add job</button>
