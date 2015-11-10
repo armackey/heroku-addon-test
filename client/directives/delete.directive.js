@@ -8,12 +8,11 @@
 
         return {
           restrict: 'E',
-          template: '<button ng-click="remove(item)" >delete</button>',
-          controller: 'Main',
+          template: '<button ng-click="remove(todo)" >delete</button>',
           link: function(scope, elem, attrs) {
-            scope.remove = function(item) {
-              console.log(item);
-              $http.delete('/removeJob/' + item.id).then(function() {
+            scope.remove = function(todo) {
+              console.log(todo);
+              $http.delete('/removeJob/' + todo._id).then(function() {
                 console.log('deleted');
               });
             };
