@@ -7,7 +7,7 @@ angular
         controller: 'Main',
         link: function(scope, elem, attrs) {
           scope.isAdding = false;
-          scope.preAdd = function () {
+          scope.preAdd = function() {
             scope.isAdding = true;
           };
         }

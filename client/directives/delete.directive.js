@@ -6,7 +6,7 @@ angular
         template: '<button ng-click="remove(item)" >delete</button>',
         controller: 'Main',
         link: function(scope, elem, attrs) {
-          scope.remove = function (item) {
+          scope.remove = function(item) {
             var items = storage.get();
             for (var i = 0; i < items.length; i++) {
               if (items[i].id === i) {

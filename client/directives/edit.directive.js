@@ -6,7 +6,7 @@ angular
         template: '<button ng-click="edit(id)" >edit</button ng-click="edit()">',
         controller: 'Main',
         link: function(scope, elem, attrs) {
-          scope.edit = function (id) {
+          scope.edit = function(id) {
             console.log(id);
           };
         }

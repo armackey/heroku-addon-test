@@ -1,7 +1,7 @@
 var Jobs = require('../models/job.model');
 
 // find all jobs in database
-exports.getJobs = function (req, res) {
+exports.getJobs = function(req, res) {
   Jobs.find({}, function(err, jobs) {
     if (err) 
       throw err;
@@ -15,7 +15,7 @@ exports.getJobs = function (req, res) {
 };
 
 // post a job
-exports.postJob = function (req, res) {
+exports.postJob = function(req, res) {
   // creates an instance and stores it
   var newJob = new Jobs(req.body);
   newJob.save(function(){
@@ -25,7 +25,7 @@ exports.postJob = function (req, res) {
 };
 
 // delete a job
-exports.removeJob = function (req, res) {
+exports.removeJob = function(req, res) {
   Jobs.findByIdAndRemove(req.params.id, function (err, job) {
     if (err)
       throw err;
@@ -34,8 +34,8 @@ exports.removeJob = function (req, res) {
 };
 
 // update a job
-exports.updateJob = function (req, res) {
-  Jobs.findById(req.params.id, function (err, job) {
+exports.updateJob = function(req, res) {
+  Jobs.findById(req.params.id, function(err, job) {
     if (err)
       throw err;
     // available options to update
