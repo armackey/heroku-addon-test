@@ -24,7 +24,7 @@
               return data;
             });
           };
-
+          console.log(this);
           return this;
         }
   })();

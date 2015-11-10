@@ -24,7 +24,7 @@ exports.postJob = function(req, res) {
     lastRun: req.body.lastRun,
     nextRun: req.body.nextRun
   });
-  console.log(req.body);
+  console.log(newJob);
   newJob.save(function(){
     console.log('post it');
     // sends back to client

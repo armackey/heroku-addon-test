@@ -6,7 +6,7 @@ var JobSchema = new Schema({
   dynos: {type: String},
   frequency: {type: String},
   lastRun: {type: String},
-  nextRun: {type: Date},
+  nextRun: {type: String},
   date: {type: Date, default: new Date()}
 });
 

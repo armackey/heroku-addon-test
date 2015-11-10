@@ -3,11 +3,9 @@
 
   angular
     .module('app')
-    .directive('jobForm', Job);
+    .directive('jobForm', jobForm);
 
-      function Job(Storage, $http) {
-
-        Job.$inject = ['$http, Storage'];
+      function jobForm($http) {
 
         return {
           restrict: 'E',
@@ -22,24 +20,20 @@
           controller: 'Main',
           link: function(scope, elem, attrs) {
 
-            var vm = this;
-            console.log(scope);
             // our job object and it's properties that we want to store in db
             var job = {
               task: scope.task,
               dynos: scope.opts.select.amount,
               frequency: scope.opts.select2.time,
               lastRun: 'unspecified',
-              nextRun: scope.opts.select2.nextRun
+              nextRun: scope.opts.select2.time
             };
+            scope.todos = [];
             scope.addJob = function () {
-              console.log(scope.opts.select2);
-              console.log(job);
               $http.post('/postJob', job).then(function() {
-                
+                scope.todos.push(job);
                 scope.opts.task = '';  
                 scope.isAdding = false;
-                scope.todo = Storage.get();
               }); 
               
             };
